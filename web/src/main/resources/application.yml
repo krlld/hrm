@@ -15,6 +15,15 @@ spring:
         jwt:
           issuer-uri: http://keycloak:${keycloak.port}/realms/${keycloak.realm}
           jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
+  rabbitmq:
+    host: localhost
+    username: rmuser
+    password: rmpassword
+
+rabbitmq:
+  queue: messageQueue
+  exchange: messageExchange
+  routingKey: messageRoutingKey
 
 keycloak:
   port: 8282
