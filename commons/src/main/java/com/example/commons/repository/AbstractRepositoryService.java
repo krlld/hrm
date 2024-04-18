@@ -25,6 +25,12 @@ public abstract class AbstractRepositoryService<E, I> implements RepositoryServi
     }
 
     @Override
+    @Transactional
+    public Iterable<E> createAll(Iterable<E> entities) {
+        return repository.saveAll(entities);
+    }
+
+    @Override
     @Transactional(readOnly = true)
     public Optional<E> find(I id) {
         return repository.findById(id);
