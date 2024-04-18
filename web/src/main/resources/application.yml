@@ -13,7 +13,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://keycloak:${keycloak.port}/realms/${keycloak.realm}
+          issuer-uri: http://localhost:${keycloak.port}/realms/${keycloak.realm}
           jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
   rabbitmq:
     host: localhost
@@ -29,4 +29,6 @@ keycloak:
   port: 8282
   realm: hrm-realm
   client-id: spring-boot-rest-api
+  id-client: c1807ac7-3c02-4f89-b85e-6aed36598337
   token-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/token
+  realm-uri: http://localhost:${keycloak.port}/admin/realms/${keycloak.realm}
