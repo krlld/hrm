@@ -15,7 +15,7 @@ services:
       - "8080:8080"
 
   keycloak-postgres:
-    image: 'postgres:${KC_POSTGRES_IMAGE_TAG:-latest}'
+    image: 'postgres:${KC_POSTGRES_IMAGE_TAG:-15-alpine}'
     container_name: '${POSTGRES_CONTAINER_NAME:-postgres}'
     restart: on-failure
     environment:
@@ -59,18 +59,18 @@ services:
       timeout: 5s
 
   db:
-    image: postgres:latest
+    image: postgres:15-alpine
     container_name: app_db_container
     restart: always
     ports:
-      - "5400:5432"
+      - "5432:5432"
     environment:
-      - POSTGRES_USER=root
-      - POSTGRES_PASSWORD=root
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1234
       - POSTGRES_DB=hrm
 
   rabbitmq:
-    image: rabbitmq:3.13.1-management-alpine
+    image: rabbitmq:3.12-management-alpine
     hostname: rabbitmq
     restart: always
     environment:

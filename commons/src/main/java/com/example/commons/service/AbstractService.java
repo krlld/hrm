@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 @RequiredArgsConstructor
 public abstract class AbstractService<E, D, I> implements ServiceInterface<D, I> {
@@ -25,6 +26,18 @@ public abstract class AbstractService<E, D, I> implements ServiceInterface<D, I>
         E entity = mapperService.toEntity(dto);
         repositoryService.create(entity);
         return mapperService.toDto(entity);
+    }
+
+    @Override
+    @Transactional
+    public Iterable<D> createAll(Iterable<D> dtos) {
+        Iterable<E> entities = StreamSupport.stream(dtos.spliterator(), false)
+                .map(mapperService::toEntity)
+                .collect(Collectors.toList());
+        entities = repositoryService.createAll(entities);
+        return StreamSupport.stream(entities.spliterator(), false)
+                .map(mapperService::toDto)
+                .collect(Collectors.toList());
     }
 
     @Override

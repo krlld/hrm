@@ -11,6 +11,8 @@ public interface RepositoryService<E, I> {
 
     E create(E entity);
 
+    Iterable<E> createAll(Iterable<E> entities);
+
     Optional<E> find(I id);
 
     E update(E entity);

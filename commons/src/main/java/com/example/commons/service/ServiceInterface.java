@@ -10,9 +10,11 @@ public interface ServiceInterface<D, I> {
 
     D create(D entity);
 
+    Iterable<D> createAll(Iterable<D> dtos);
+
     D find(I id);
 
-    D update(D entity);
+    D update(D dto);
 
     void delete(I id);
 
