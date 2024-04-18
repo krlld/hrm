@@ -30,7 +30,8 @@ public class RabbitMQNotificationProducer implements Producer {
 
     @Override
     public void produce(NotificationDto notificationDto) {
-        notificationDto.setTopic(exchange);
+        notificationDto.setExchange(exchange);
+        notificationDto.setRoutingKey(routingKey);
         notificationDto.setCreatedAt(LocalDateTime.now());
         log.info(String.format("Message produce %s", notificationDto));
         rabbitTemplate.convertAndSend(exchange, routingKey, notificationDto);

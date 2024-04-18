@@ -26,7 +26,9 @@ public class Notification {
 
     private String text;
 
-    private String topic;
+    private String exchange;
+
+    private String routingKey;
 
     private LocalDateTime createdAt;
 
