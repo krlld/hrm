@@ -8,9 +8,13 @@ services:
       - SPRING_DATASOURCE_PASSWORD=1234
       - SPRING_FLYWAY_PASSWORD=1234
       - SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER-URI=http://keycloak:${KEYCLOAK_PORT:-8080}/realms/${KEYCLOAK_REALM:-hrm-realm}
+      - SPRING_RABBITMQ_HOST=rabbitmq
+      - SPRING_RABBITMQ_USERNAME=rmuser
+      - SPRING_RABBITMQ_PASSWORD=rmpassword
     depends_on:
       - db
       - keycloak
+      - rabbitmq
     ports:
       - "8080:8080"
 
