@@ -31,7 +31,9 @@ public class ProjectController {
     @PreAuthorize("hasAnyRole('hr')")
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public Page<ProjectDto> findPage(@RequestBody ProjectFilterDto projectFilterDto, Pageable pageable) {
+    public Page<ProjectDto> findPage(
+            @RequestBody(required = false) ProjectFilterDto projectFilterDto,
+            Pageable pageable) {
         return serviceInterface.findPage(projectFilterDto, pageable);
     }
 
