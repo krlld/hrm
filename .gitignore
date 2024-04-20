@@ -4,6 +4,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 postgres-data/
+rabbitmq
 
 ### STS ###
 .apt_generated
