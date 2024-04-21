@@ -57,4 +57,10 @@ public class RealmRoleController {
         roleService.deleteRole(id);
     }
 
+    // TODO: /realm/available
+
+    // GET /admin/realms/{realm}/roles/{role-name}/groups
+
+    // GET /admin/realms/{realm}/roles/{role-name}/users
+
 }
