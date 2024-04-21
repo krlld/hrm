@@ -29,7 +29,7 @@ public class UserDto {
 
     private List<String> requiredActions;
 
-    private Map<String, Object> attributes;
+    private Map<String, List<String>> attributes;
 
     private List<UserPasswordDto> credentials;
 

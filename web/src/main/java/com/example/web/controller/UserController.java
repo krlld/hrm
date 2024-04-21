@@ -1,6 +1,8 @@
 package com.example.web.controller;
 
-
+import com.example.web.dto.GroupDto;
+import com.example.web.dto.RoleDto;
+import com.example.web.dto.RolesDto;
 import com.example.web.dto.UserDto;
 import com.example.web.dto.UserPasswordDto;
 import com.example.web.service.UserService;
@@ -46,7 +48,7 @@ public class UserController {
     }
 
     @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteUser(@PathVariable String id) {
         userService.deleteUser(id);
     }
@@ -55,6 +57,30 @@ public class UserController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void setPassword(@PathVariable String id, @RequestBody UserPasswordDto userPasswordDto) {
         userService.setPassword(id, userPasswordDto);
+    }
+
+    @GetMapping("/{id}/roles")
+    @ResponseStatus(HttpStatus.OK)
+    public RolesDto getRoles(@PathVariable String id) {
+        return userService.getRoles(id);
+    }
+
+    @PostMapping("/{id}/roles/assign")
+    @ResponseStatus(HttpStatus.OK)
+    public void assignRoles(@PathVariable String id, @RequestBody List<RoleDto> roleDtoList) {
+        userService.assignRoles(id, roleDtoList);
+    }
+
+    @DeleteMapping("/{id}/roles/unassign")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void unassignRoles(@PathVariable String id, @RequestBody List<RoleDto> roleDtoList) {
+        userService.unassignRoles(id, roleDtoList);
+    }
+
+    @GetMapping("/{userId}/roles/clients/{clientId}/available")
+    @ResponseStatus(HttpStatus.OK)
+    public List<GroupDto> getAvailableClientRoles(@PathVariable String userId, @PathVariable String clientId) {
+        return userService.getAvailableClientRoles(userId, clientId);
     }
 
 }

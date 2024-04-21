@@ -1,5 +1,7 @@
 package com.example.web.feign;
 
+import com.example.web.dto.GroupDto;
+import com.example.web.dto.RolesDto;
 import com.example.web.dto.UserDto;
 import com.example.web.dto.UserPasswordDto;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -33,4 +35,12 @@ public interface UserFeignClient {
     @PutMapping("/{id}/reset-password")
     void setPassword(@PathVariable String id, UserPasswordDto userPasswordDto);
 
+    @GetMapping("/{id}/role-mappings")
+    RolesDto getRoles(@PathVariable String id);
+
+    @GetMapping("/{userId}/role-mappings/realm/available")
+    List<GroupDto> getAvailableRealmRoles(@PathVariable String userId);
+
+    @GetMapping("/{userId}/role-mappings/clients/{clientId}/available")
+    List<GroupDto> getAvailableClientRoles(@PathVariable String userId, @PathVariable String clientId);
 }
