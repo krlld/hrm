@@ -39,6 +39,9 @@ public class ClientRoleController {
         return roleService.getRoleById(id);
     }
 
+    // TODO: get role by name
+    // GET /admin/realms/{realm}/clients/{client-uuid}/roles/{role-name}
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public RoleDto createClientRole(@RequestBody RoleDto roleDto) {
@@ -58,5 +61,7 @@ public class ClientRoleController {
     public void deleteClientRole(@PathVariable String id) {
         roleService.deleteRole(id);
     }
+
+    // GET /admin/realms/{realm}/clients/{client-uuid}/roles/{role-name}/groups
 
 }
