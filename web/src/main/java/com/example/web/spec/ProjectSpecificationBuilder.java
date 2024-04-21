@@ -6,6 +6,7 @@ import com.example.web.dto.ProjectFilterDto;
 import com.example.web.entity.Project;
 import javax.persistence.criteria.Predicate;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -15,7 +16,10 @@ import java.util.List;
 public class ProjectSpecificationBuilder implements SpecificationBuilder<Project> {
 
     @Override
-    public Specification<Project> build(FilterRequest filterRequest) {
+    public Specification<Project> build(@Nullable FilterRequest filterRequest) {
+        if (filterRequest == null) {
+            return (root, query, builder) -> builder.and();
+        }
         ProjectFilterDto projectFilterDto = (ProjectFilterDto) filterRequest;
         return (root, query, builder) -> {
             List<Predicate> predicates = new ArrayList<>();

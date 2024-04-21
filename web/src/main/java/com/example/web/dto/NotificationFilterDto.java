@@ -6,5 +6,5 @@ import lombok.Data;
 @Data
 public class NotificationFilterDto implements FilterRequest {
 
-    private boolean isRead;
+    private Boolean isRead;
 }

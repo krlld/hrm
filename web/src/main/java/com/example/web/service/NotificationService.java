@@ -1,10 +1,10 @@
 package com.example.web.service;
 
+import com.example.commons.dto.FilterRequest;
 import com.example.commons.mapper.MapperService;
 import com.example.commons.repository.RepositoryService;
 import com.example.commons.service.AbstractService;
 import com.example.web.dto.NotificationDto;
-import com.example.web.dto.NotificationFilterDto;
 import com.example.web.entity.Notification;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -20,11 +20,10 @@ public class NotificationService extends AbstractService<Notification, Notificat
         super(repositoryService, mapperService);
     }
 
+    @Override
     @Transactional
-    public Page<NotificationDto> getUnread(Pageable pageable) {
-        NotificationFilterDto notificationFilterDto = new NotificationFilterDto();
-        notificationFilterDto.setRead(false);
-        Page<NotificationDto> notificationDtos = findPage(notificationFilterDto, pageable);
+    public Page<NotificationDto> findPage(FilterRequest filter, Pageable pageable) {
+        Page<NotificationDto> notificationDtos = super.findPage(filter, pageable);
         notificationDtos.forEach(notificationDto -> notificationDto.setIsRead(Boolean.TRUE));
         createAll(notificationDtos);
         return notificationDtos;
