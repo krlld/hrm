@@ -62,11 +62,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<GroupDto> getAvailableRealmRoles(String userId) {
-        return userFeignClient.getAvailableRealmRoles(userId);
-    }
-
-    @Override
     public List<GroupDto> getAvailableClientRoles(String userId, String clientId) {
         return userFeignClient.getAvailableClientRoles(userId, clientId);
     }

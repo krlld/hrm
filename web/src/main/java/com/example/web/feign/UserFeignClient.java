@@ -43,4 +43,5 @@ public interface UserFeignClient {
 
     @GetMapping("/{userId}/role-mappings/clients/{clientId}/available")
     List<GroupDto> getAvailableClientRoles(@PathVariable String userId, @PathVariable String clientId);
+
 }

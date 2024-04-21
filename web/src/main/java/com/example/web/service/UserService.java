@@ -26,7 +26,5 @@ public interface UserService {
 
     void unassignRoles(String id, List<RoleDto> roleDto);
 
-    List<GroupDto> getAvailableRealmRoles(String userId);
-
     List<GroupDto> getAvailableClientRoles(String userId, String clientId);
 }
