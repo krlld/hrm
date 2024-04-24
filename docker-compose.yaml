@@ -39,7 +39,7 @@ services:
     container_name: keycloak-24
     command: start
     environment:
-      KC_HOSTNAME: 10.97.95.32
+      KC_HOSTNAME: kk
 #      KC_HOSTNAME_STRICT_BACKCHANNEL: false
       KC_HTTP_ENABLED: true
       KC_HOSTNAME_STRICT: false
