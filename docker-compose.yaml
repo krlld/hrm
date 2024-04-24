@@ -40,7 +40,6 @@ services:
     command: start
     working_dir: /opt/keycloak
     environment:
-      KC_HOSTNAME: Public IPV4
       #      KC_HOSTNAME_STRICT_BACKCHANNEL: false
       KC_HTTP_ENABLED: true
       KC_HOSTNAME_STRICT: false
