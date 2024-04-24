@@ -46,6 +46,7 @@ services:
       KC_HEALTH_ENABLED: true
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
+      PROXY_ADDRESS_FORWARDING: true
       KC_DB: postgres
       KC_DB_URL: 'jdbc:postgresql://postgres:5432/postgres'
       KC_DB_USERNAME: root
