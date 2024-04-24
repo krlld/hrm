@@ -69,8 +69,8 @@ services:
       retries: 3
       timeout: 5s
     volumes:
-      - ./server.crt.pem:/opt/keycloak/conf/server.crt.pem
-      - ./server.key.pem:/opt/keycloak/conf/server.key.pem
+      - ../server.crt.pem:/opt/keycloak/conf/server.crt.pem
+      - ../server.key.pem:/opt/keycloak/conf/server.key.pem
 
   db:
     image: postgres:15-alpine
