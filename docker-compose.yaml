@@ -48,7 +48,7 @@ services:
       KC_HEALTH_ENABLED: true
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
-      KC_HOSTNAME_ADMIN_URL: 'http://10.97.95.32:8080/'
+      KC_HOSTNAME_ADMIN_URL: "http://10.97.95.32:8080/admin"
       KC_HOSTNAME_DEBUG: true
       KC_PROXY: edge
       PROXY_ADDRESS_FORWARDING: true
