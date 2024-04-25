@@ -6,7 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(url = "${keycloak.realm-uri}/clients")
+@FeignClient(
+        name = "clientFeignClient",
+        url = "${keycloak.realm-uri}/clients"
+)
 public interface ClientFeignClient {
 
     @GetMapping("/{id}")
