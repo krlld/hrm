@@ -30,6 +30,6 @@ keycloak:
   port: 8282
   realm: hrm-realm
   client-id: spring-boot-rest-api
-  id-client: 54666d29-5006-4a48-a9e0-437c29608275
+  id-client: a67c0cf1-d719-4dce-b7fb-a7337a205d8b
   token-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/token
   realm-uri: ${keycloak.url}}/${keycloak.realm}
