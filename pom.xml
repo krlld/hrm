@@ -7,10 +7,10 @@
         <artifactId>parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>web</artifactId>
+    <artifactId>hrm</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>web</name>
-    <description>web</description>
+    <name>hrm</name>
+    <description>hrm</description>
     <properties>
         <spring-cloud.version>2021.0.8</spring-cloud.version>
     </properties>
