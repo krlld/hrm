@@ -32,4 +32,4 @@ keycloak:
   client-id: spring-boot-rest-api
   id-client: a67c0cf1-d719-4dce-b7fb-a7337a205d8b
   token-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/token
-  realm-uri: ${keycloak.url}}/${keycloak.realm}
+  realm-uri: ${keycloak.url}/${keycloak.realm}

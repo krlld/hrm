@@ -83,4 +83,16 @@ public class UserController {
         return userService.getAvailableClientRoles(userId, clientId);
     }
 
+    @PutMapping("/{userId}/groups/{groupId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void assignGroup(@PathVariable String userId, @PathVariable String groupId) {
+        userService.assignGroup(userId, groupId);
+    }
+
+    @DeleteMapping("/{userId}/groups/{groupId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void unassignGroup(@PathVariable String userId, @PathVariable String groupId) {
+        userService.unassignGroup(userId, groupId);
+    }
+
 }

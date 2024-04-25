@@ -44,4 +44,10 @@ public interface UserFeignClient {
     @GetMapping("/{userId}/role-mappings/clients/{clientId}/available")
     List<GroupDto> getAvailableClientRoles(@PathVariable String userId, @PathVariable String clientId);
 
+    @PutMapping("/{userId}/groups/{groupId}")
+    void assignGroup(@PathVariable String userId, @PathVariable String groupId);
+
+    @DeleteMapping("/{userId}/groups/{groupId}")
+    void unassignGroup(@PathVariable String userId, @PathVariable String groupId);
+
 }

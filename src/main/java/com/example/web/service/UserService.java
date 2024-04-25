@@ -27,4 +27,9 @@ public interface UserService {
     void unassignRoles(String id, List<RoleDto> roleDto);
 
     List<GroupDto> getAvailableClientRoles(String userId, String clientId);
+
+    void assignGroup(String userId, String groupId);
+
+    void unassignGroup(String userId, String groupId);
+
 }

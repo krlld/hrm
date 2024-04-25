@@ -65,4 +65,15 @@ public class UserServiceImpl implements UserService {
     public List<GroupDto> getAvailableClientRoles(String userId, String clientId) {
         return userFeignClient.getAvailableClientRoles(userId, clientId);
     }
+
+    @Override
+    public void assignGroup(String userId, String groupId) {
+        userFeignClient.assignGroup(userId, groupId);
+    }
+
+    @Override
+    public void unassignGroup(String userId, String groupId) {
+        userFeignClient.unassignGroup(userId, groupId);
+    }
+
 }
