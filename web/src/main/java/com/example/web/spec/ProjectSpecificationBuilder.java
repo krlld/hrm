@@ -1,7 +1,7 @@
 package com.example.web.spec;
 
-import com.example.commons.dto.FilterRequest;
-import com.example.commons.specification.SpecificationBuilder;
+import com.example.commonlib.dto.FilterRequest;
+import com.example.commonlib.specification.SpecificationBuilder;
 import com.example.web.dto.ProjectFilterDto;
 import com.example.web.entity.Project;
 import javax.persistence.criteria.Predicate;

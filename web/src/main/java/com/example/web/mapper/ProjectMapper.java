@@ -1,6 +1,6 @@
 package com.example.web.mapper;
 
-import com.example.commons.mapper.MapperService;
+import com.example.commonlib.mapper.MapperService;
 import com.example.web.dto.ProjectDto;
 import com.example.web.entity.Project;
 import org.mapstruct.Mapper;

@@ -1,8 +1,8 @@
 package com.example.web.repository.impl;
 
-import com.example.commons.repository.AbstractRepositoryService;
-import com.example.commons.repository.BaseRepository;
-import com.example.commons.specification.SpecificationBuilder;
+import com.example.commonlib.repository.AbstractRepositoryService;
+import com.example.commonlib.repository.BaseRepository;
+import com.example.commonlib.specification.SpecificationBuilder;
 import com.example.web.entity.Notification;
 import org.springframework.stereotype.Repository;
 

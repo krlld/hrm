@@ -1,7 +1,7 @@
 package com.example.web.handler;
 
-import com.example.commons.exception.NotFoundException;
-import com.example.commons.exception.ServiceException;
+import com.example.commonlib.exception.NotFoundException;
+import com.example.commonlib.exception.ServiceException;
 import com.example.web.dto.ApiErrorResponse;
 import javax.validation.ConstraintViolationException;
 import lombok.extern.slf4j.Slf4j;

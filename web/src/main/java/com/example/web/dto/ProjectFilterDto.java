@@ -1,6 +1,6 @@
 package com.example.web.dto;
 
-import com.example.commons.dto.FilterRequest;
+import com.example.commonlib.dto.FilterRequest;
 import lombok.Data;
 
 import java.math.BigDecimal;

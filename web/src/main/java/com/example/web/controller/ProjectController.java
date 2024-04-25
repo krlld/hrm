@@ -1,6 +1,6 @@
 package com.example.web.controller;
 
-import com.example.commons.service.ServiceInterface;
+import com.example.commonlib.service.ServiceInterface;
 import com.example.web.dto.ProjectDto;
 import com.example.web.dto.ProjectFilterDto;
 import javax.validation.Valid;

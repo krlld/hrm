@@ -1,6 +1,6 @@
 package com.example.web.consumer.impl;
 
-import com.example.commons.service.ServiceInterface;
+import com.example.commonlib.service.ServiceInterface;
 import com.example.web.consumer.Consumer;
 import com.example.web.dto.NotificationDto;
 import lombok.RequiredArgsConstructor;

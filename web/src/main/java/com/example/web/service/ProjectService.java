@@ -1,8 +1,8 @@
 package com.example.web.service;
 
-import com.example.commons.mapper.MapperService;
-import com.example.commons.repository.RepositoryService;
-import com.example.commons.service.AbstractService;
+import com.example.commonlib.mapper.MapperService;
+import com.example.commonlib.repository.RepositoryService;
+import com.example.commonlib.service.AbstractService;
 import com.example.web.dto.ProjectDto;
 import com.example.web.entity.Project;
 import org.springframework.stereotype.Service;
